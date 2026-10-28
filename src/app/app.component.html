@@ -1,21 +1,61 @@
-<header>
-  <h1>{{ title }}</h1>
-</header>
+<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+<header><h1>{{ title }}</h1></header>
 
-<main class="container">
-  <p>Se modificó una línea de texto en el archivo app.component.html y el navegador se actualizó automáticamente, demostrando que el hot reload funciona correctamente.
-</p>
+<main id="contenido" class="container">
 
-  <div class="card">
-    <p>Proyecto Angular EAC1 - IOC</p>
-    <p>Versión inicial del proyecto AgendaTime.</p>
-  </div>
+  <app-agenda-filter
+    (aplicar)="aplicarFiltros($event)"
+    (limpiar)="limpiarFiltros()">
+  </app-agenda-filter>
 
-  <aside>
-    <p>Nota: Projecte base llest.</p>
-  </aside>
+  <p class="result-count" role="status" aria-live="polite">Resultados: {{ itemsFiltrados.length }}</p>
+
+  @if (itemsFiltrados.length > 0) {
+
+  <app-agenda-list
+    [items]="itemsFiltrados"
+    (seleccionar)="seleccionarItem($event)">
+  </app-agenda-list>
+
+} @else {
+
+  <p class="empty-state" role="status">
+    No se encontraron resultados.
+  </p>
+
+}
+@if (elementoSeleccionado) {
+
+  <section class="detalle">
+
+    <h2>Detalle: {{ elementoSeleccionado.nombre }}</h2>
+
+    <p>
+      <strong>Nombre:</strong>
+      {{ elementoSeleccionado.nombre }}
+    </p>
+
+    <p>
+      <strong>Descripción:</strong>
+      {{ elementoSeleccionado.descripcion }}
+    </p>
+
+    <p>
+      <strong>Categoría:</strong>
+      {{ elementoSeleccionado.categoria }}
+    </p>
+
+    <p>
+      <strong>Prioridad:</strong>
+      {{ elementoSeleccionado.prioridad }}
+    </p>
+
+    <p>
+      <strong>Fecha:</strong>
+      {{ elementoSeleccionado.fecha | date:'dd/MM/yyyy' }}
+    </p>
+
+  </section>
+
+}
 </main>
-
-<footer>
-  <p>© 2024 AgendaTime - IOC</p>
-</footer>

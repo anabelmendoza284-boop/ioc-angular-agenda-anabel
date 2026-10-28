@@ -1,0 +1,64 @@
+<div class="filtros">
+  <form #filtroForm="ngForm" (ngSubmit)="aplicarFiltro()">
+  <label for="buscar">Buscar tarea</label>
+  <input
+  id="buscar"
+  type="text"
+  name="texto"
+  required
+  minlength="3"
+  placeholder="Buscar..."
+  [(ngModel)]="texto"
+  #textoInput="ngModel">
+  
+  @if (textoInput.hasError('minlength') && textoInput.touched) {
+
+  <p class="error">
+    El texto debe tener al menos 3 caracteres.
+  </p>
+
+}
+
+  <label for="categoria">
+    Categoría
+  </label>
+  <select
+  id="categoria"
+  name="categoria"
+  [(ngModel)]="categoria">
+
+    <option value="">
+      Todas
+    </option>
+
+    <option value="Estudios">
+      Estudios
+    </option>
+
+    <option value="Salud">
+      Salud
+    </option>
+
+    <option value="Personal">
+      Personal
+    </option>
+
+    <option value="Trabajo">
+      Trabajo
+    </option>
+
+    <option value="Deporte">
+      Deporte
+    </option>
+
+  </select>
+
+  <button type="submit" [disabled]="filtroForm.invalid">
+  Aplicar
+  </button>
+
+  <button type="button" (click)="limpiarFiltro()">
+    Limpiar
+  </button>
+  </form>
+</div>

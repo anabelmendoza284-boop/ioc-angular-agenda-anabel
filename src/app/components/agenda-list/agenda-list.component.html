@@ -1,0 +1,8 @@
+@for (item of items; track item.id) {
+
+  <app-agenda-card
+    [item]="item"
+    (seleccionar)="seleccionarItem($event)">
+  </app-agenda-card>
+
+}

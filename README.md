@@ -1,59 +1,59 @@
-# IocAngularAgendaAnabel
+# Nom de l'aplicació
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+Agenda Personal
 
-## Development server
+## Autor/a
 
-To start a local development server, run:
+Anabel Mendoza Gonzales
 
-```bash
-ng serve
-```
+## Descripció
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Aplicació d'agenda personal per consultar tasques, cercar-les per text i categoria, i seleccionar una tasca per veure'n el detall.
 
-## Code scaffolding
+## Versions utilitzades
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js 24.21.0 (branca 24.x LTS)
+- npm 11.19.0
+- Angular 22.2.0
+- Angular CLI 22.2.0
+- TypeScript 6.0.x
+- Git 2.x
+- Visual Studio Code
 
-```bash
-ng generate component component-name
-```
+## Com crear i executar el projecte
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Des de la carpeta arrel del projecte:
 
 ```bash
-ng build
+npm install
+npx ng serve
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Obre `http://localhost:4200/`. El servidor de desenvolupament actualitza l'aplicació automàticament en desar els canvis (hot reload).
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Per compilar el projecte i executar les proves:
 
 ```bash
-ng test
+npx ng build
+npx ng test
 ```
 
-## Running end-to-end tests
+## Estat de l'EAC1
 
-For end-to-end (e2e) testing, run:
+EAC1 aprovat. Aquest projecte parteix de la base creada a l'EAC1. El treball de l'EAC2 es fa a la branca `ra2-components`.
 
-```bash
-ng e2e
-```
+## Enllaç del repositori
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+https://github.com/anabelmendoza284-boop/ioc-angular-agenda-anabel
 
-## Additional Resources
+## Branca de treball
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+`ra2-components`
+
+## Components creats
+
+- `AppComponent`: aplica els filtres i mostra els resultats, el comptador i el detall de la tasca seleccionada.
+- `AgendaFilterComponent`: permet cercar per text i categoria, aplicar els filtres i restablir-los.
+- `AgendaListComponent`: mostra la llista de tasques.
+- `AgendaCardComponent`: mostra el resum d'una tasca i permet seleccionar-la.
+- `CategoryBadgeComponent`: mostra la categoria de la tasca com una etiqueta.

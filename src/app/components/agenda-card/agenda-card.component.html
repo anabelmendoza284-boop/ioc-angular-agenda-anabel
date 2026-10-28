@@ -1,0 +1,11 @@
+<button type="button" class="card" (click)="seleccionarItem()" [attr.aria-label]="'Ver detalle de ' + item.nombre">
+
+  <h3>{{ item.nombre }}</h3>
+
+  <p>{{ item.descripcion }}</p>
+
+  <app-category-badge
+    [categoria]="item.categoria">
+  </app-category-badge>
+
+</button>
